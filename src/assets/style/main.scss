@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.cdnfonts.com/css/neue-haas-grotesk-display-pro');
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: Neue Haas Grotesk Display Pro, sans-serif;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 500;
+
+  & * {
+    letter-spacing: -0.03em;
+    cursor: url("../img/cursor.svg"), auto;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: #300A0A;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F2EDE8;
+  border-radius: 500px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F2EDE8;
+}
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scrollbar-gutter: stable;
+  background: var(--Bordeaux-brown, #FFF);
+
+  &.no-scroll {
+    overflow: hidden !important;
+  }
+}
+
+._container {
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 1640px;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.animation-logo {
+  animation: rotate_animation 10s infinite linear;
+}
+
+@keyframes rotate_animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

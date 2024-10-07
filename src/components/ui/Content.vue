@@ -1,0 +1,101 @@
+<script setup>
+import {gsap} from "gsap";
+import {onMounted, ref} from "vue";
+
+const props = defineProps({
+  logoImg:Array,
+  backgroundColor:String,
+  color: String,
+  arrowDown:String,
+});
+
+const logoContainer = ref(null);
+
+
+function topScroll() {
+  window.scrollTo({
+    top: 1500,
+    behavior: "smooth",
+  });
+}
+
+onMounted(() => {
+  const images = logoContainer.value.querySelectorAll('.logo-image');
+  gsap.fromTo(images,
+      {
+        opacity: 0,
+        scale: 0.8
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.3,
+        stagger: 0.1,
+        ease: 'power2.inOut',
+      });
+});
+</script>
+
+<template>
+  <div class="content" :style="{backgroundColor:props.backgroundColor}">
+    <div ref="logoContainer" class="logo_name">
+      <img v-for="(img,index) in props.logoImg" :key="index" class="logo-image" :src="img.img"
+           :class="{'ml-[10px] logo-image animation-logo':index===9}" alt="Logo Name PRECISION">
+    </div>
+  </div>
+  <div :style="{backgroundColor:props.backgroundColor}">
+    <div class="flex _container  justify-between items-center ">
+      <div class="footer-text w-[20%]" :class="`text-[${props.color}]`">
+        Precision-Focused
+        <span class="text-[#F6733C]">Healthcare</span> Future
+      </div>
+      <div @click="topScroll" class="flex gap-[7px] items-center text-scroll-down" :style="{color:props.color}">
+        Scroll to explore <img class="animation-arrow" :src="props.arrowDown" alt="">
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="scss">
+.animation-arrow {
+  animation: top-bottom 0.4s infinite alternate;
+  transition: 0.1s all;
+}
+
+@keyframes top-bottom {
+  0% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+.content {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo_name {
+    display: flex;
+    gap: 11px;
+    align-items: start;
+  }
+}
+
+.footer-text {
+  font-size: 30px !important;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.text-scroll-down {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160%;
+}
+</style>

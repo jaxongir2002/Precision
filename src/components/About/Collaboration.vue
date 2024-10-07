@@ -21,7 +21,7 @@ const info = ref([
 </script>
 
 <template>
-  <div class="w-[75%] flex justify-between mt-[200px] m-auto">
+  <div class="w-[100%] pl-[120px]  flex justify-between mt-[200px] m-auto">
     <div>
       <img class="logo" src="@/assets/img/About/LineAbout.svg" alt="">
     </div>

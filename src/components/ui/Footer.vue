@@ -23,7 +23,12 @@ function wordFade() {
     ease: 'power2.out',
   });
 }
-
+function topScroll() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
 onMounted(() => {
   wordFade();
 });
@@ -98,7 +103,7 @@ onMounted(() => {
         <div class="since-year w-[20%] flex items-end">
           © 2024 Precision Health Care Group
         </div>
-        <div class="since-year flex gap-2 items-end">
+        <div @click="topScroll" class="since-year flex gap-2 items-end cursor-pointer">
           Back to Top <img class="w-[20px]" src="@/assets/img/ArrowDown.svg" alt="">
         </div>
       </div>

@@ -24,10 +24,28 @@ const items = ref([
     text: 'Safety',
     title: 'security'
   },
-
+  {
+    text: 'Integrity',
+    title: ''
+  },
+  {
+    text: 'Safety',
+    title: 'security'
+  },
+  {
+    text: 'Safety',
+    title: 'security'
+  },
+  {
+    text: 'Integrity',
+    title: ''
+  },
+  {
+    text: 'Safety',
+    title: 'security'
+  },
 ])
 
-const animationDuration = computed(() => items.value.length * 3);
 </script>
 
 <template>
@@ -43,7 +61,7 @@ const animationDuration = computed(() => items.value.length * 3);
         <img src="@/assets/img/warperIcon.svg" alt=""/>
         {{ item.title }}
         <div class="flex justify-end relative left-[25px]">
-          <img src="@/assets/img/Plus.svg" class="vectors-wrapper " alt=""/>
+          <img src="@/assets/img/Plus.svg" class="vectors-wrapper" alt=""/>
         </div>
 
       </div>
@@ -55,8 +73,8 @@ const animationDuration = computed(() => items.value.length * 3);
 <style scoped lang="scss">
 .vectors-wrapper {
   object-fit: cover;
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
   display: flex;
 }
 

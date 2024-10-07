@@ -91,7 +91,7 @@ onBeforeUnmount(() => {
 </template>
 <style>
 body{
-  background: #fff;
+  background: #fff !important;
 }
 </style>
 <style scoped lang="scss">

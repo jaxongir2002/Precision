@@ -89,8 +89,13 @@ onBeforeUnmount(() => {
   <Form/>
   <Footer/>
 </template>
-
+<style>
+body{
+  background: #fff;
+}
+</style>
 <style scoped lang="scss">
+
 .hero {
   width: 100%;
 }

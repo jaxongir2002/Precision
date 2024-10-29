@@ -70,9 +70,8 @@ onMounted(() => {
     }"
     >
       <swiper-slide v-for="(item, index) in 5" :key="index">
-
-        <div class="flex justify-between mt-[75px]">
-          <div class="w-[20%]">
+        <div class="flex justify-between mt-[75px] max-lg:flex-col">
+          <div class="w-[20%] max-lg:w-full">
             <div class="text-stories text-stories-animate text-[#300A0A] w-[80%]">
               Real <span class="text-[#F5733D]">Stories</span>,
               Real <span class="text-[#F5733D]">Care</span>.
@@ -82,9 +81,10 @@ onMounted(() => {
             </div>
           </div>
 
-          <div class="w-[33%]">
-            <img class="relative bottom-[20px] right-[20px]" src="@/assets/img/Mark.svg" alt="">
-            <div class="text-description text-stories-animate text-[28px]">
+          <div class="w-[33%] max-lg:w-full">
+            <img class="relative bottom-[20px] max-lg:static max-lg:mb-3 max-lg:mt-[40px] right-[20px]"
+                 src="@/assets/img/Mark.svg" alt="">
+            <div class="text-description text-stories-animate text-[28px] max-lg:text-[18px]">
               Lorem ipsum dolor sit amet consectetur. Diam netus sapien netus iaculis dignissim. Lorem ipsum dolor sit
               amet
               consectetur. Diam netus sapien netus iaculis dignissim.
@@ -133,11 +133,27 @@ onMounted(() => {
 }
 
 @media (max-width: 768px) {
+  .swiper{
+    //position: static !important;
+  }
   .swiper-button-prev,
   .swiper-button-next {
     top: 100%;
     width: 50px;
     height: 50px;
+    display: none !important;
+  }
+  .swiper-button-prev {
+    position: absolute !important;
+    top: 90% !important;
+    left: 40% !important;
+  }
+
+  .swiper-button-next {
+    position: absolute !important;
+    top: 90% !important;
+    right: 20% !important;
+    z-index: 333;
   }
 }
 
@@ -212,5 +228,11 @@ onMounted(() => {
   font-style: normal;
   font-weight: 500;
   line-height: 130%; /* 26px */
+}
+
+@media (max-width: 767px) {
+  .text-stories {
+    font-size: 30px;
+  }
 }
 </style>

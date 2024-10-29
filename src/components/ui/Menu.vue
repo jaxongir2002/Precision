@@ -27,7 +27,7 @@ function pushPage(page) {
 
 <template>
   <div class="menu-nav z-50" :style="{backgroundColor: props.backgroundColor}">
-    <div class="_container h-[90%]">
+    <div class="_container max-lg:hidden h-[90%]">
       <div class="flex flex-col justify-between  h-full">
         <div class="flex justify-between mt-[140px] ">
           <div class="flex flex-col gap-5">
@@ -70,6 +70,28 @@ function pushPage(page) {
           </div>
           <div :class="`text-[${props.color}]`" class="social-text text-[16px] flex gap-2 items-end">
             © 2024 Precision, Inc.
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--mobile version-->
+    <div class="_container h-[90%] hidden max-lg:block">
+      <div class="flex flex-col justify-between  h-full">
+        <div class="flex justify-between mt-[140px] ">
+          <div class="flex flex-col gap-2.5 menu_nav">
+            <div class="social-text text-[20px]" :style="{color: props.color}">
+              Menu
+            </div>
+            <div @click="pushPage('/')" class="social-text text-[60px] menu" :style="{color: props.color}">
+              Home
+            </div>
+            <div @click="pushPage('/about')" class="social-text text-[60px] menu" :style="{color: props.color}">
+              About
+            </div>
+            <div @click="pushPage('/contact-us')" class="social-text text-[60px] menu" :style="{color: props.color}">
+              Contact us
+            </div>
           </div>
         </div>
       </div>

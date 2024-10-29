@@ -5,21 +5,25 @@ import gsap from "gsap";
 import {onBeforeUnmount, onMounted, ref} from "vue";
 
 let tl;
-gsap.registerPlugin(ScrollTrigger,SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 const scrollRegister = ref(null);
 const imgRotate = ref(null);
 const title = ref(null);
 
-function wordFade() {
-  let mySplitText = new SplitText(".text-animation_our", {type: "chars"});
-  let chars = mySplitText.chars;
-
-  gsap.from(chars, {
-    yPercent: 130,
-    stagger: 0.02,
-    opacity:0
-  });
+function isMobile() {
+  return window.innerWidth <= 767; // Adjust the breakpoint as needed
 }
+
+// function wordFade() {
+//   let mySplitText = new SplitText(".text-animation_our", {type: "chars"});
+//   let chars = mySplitText.chars;
+//
+//   gsap.from(chars, {
+//     yPercent: 130,
+//     stagger: 0.02,
+//     opacity:0
+//   });
+// }
 
 function initRegisterAnimation() {
   tl = gsap.timeline({
@@ -27,7 +31,7 @@ function initRegisterAnimation() {
       trigger: scrollRegister.value,
       start: 'top 3%',
       pin: true,
-      end: '150%',
+      end: '130%',
       scrub: true,
     },
   });
@@ -37,15 +41,15 @@ function initRegisterAnimation() {
     rotate: '180deg'
   })
   tl.to(imgRotate.value, {
-    duration: 0.5,
-    scale: '1.1',
+    duration: 0.3,
+    scale: isMobile() ? 0.8 : '1.1',
     rotate: '-160deg',
   })
   return tl;
 }
 
 onMounted(() => {
-  wordFade();
+  // wordFade();
 
   tl = initRegisterAnimation();
   window.addEventListener('popstate', () => {
@@ -64,11 +68,12 @@ onBeforeUnmount(() => {
 <template>
   <div ref="scrollRegister" class="main-our">
     <LineWrapper/>
-    <div class="grid grid-cols-12 _container">
-      <div class="text-philosophy flex gap-[16px] items-center col-span-4">
+    <div class="grid grid-cols-12 _container max-lg:mt-[60px]">
+      <div class="text-philosophy flex gap-[16px] items-center col-span-4 max-lg:col-span-12 ">
         <img class="animation-logo" src="@/assets/img/OurPhilosophy.svg" alt=""> Our philosophy
       </div>
-      <div ref="title" class="text-[40px] text-[#300A0A] text-animation_our font-medium leading-[52px] col-span-5 mt-[100px]">
+      <div ref="title" class="text-[40px] max-lg:text-[24px] max-lg:leading-[130%] max-lg:w-full max-lg:mt-[32px] text-[#300A0A] max-lg:col-span-12
+      text-animation_our font-medium leading-[52px] col-span-5 mt-[100px]">
         Empowering <span class="text-[#F5733D]">Health</span>. Elevating <span class="text-[#F5733D]">Care</span>.
         Delivering personalized, people-first care with unwavering integrity and innovation.
       </div>

@@ -3,7 +3,7 @@ import USEmap from "@/components/ui/USEmap.vue";
 </script>
 
 <template>
-  <div class="bg-[#F2EDE8] rounded-[30px]  _container relative" style="margin-top: 80px">
+  <div class="bg-[#F2EDE8] rounded-[30px]  _container relative max-lg:hidden" style="margin-top: 80px">
     <div class="absolute z-10 right-0 left-0 flex justify-center top-[32px]">
       <button class="flex gap-2.5 btn_location ">
         <img src="@/assets/img/IcconMap.svg" alt=""> USA

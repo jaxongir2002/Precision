@@ -11,7 +11,6 @@ const props = defineProps({
 
 const logoContainer = ref(null);
 
-
 function topScroll() {
   window.scrollTo({
     top: 1500,
@@ -39,17 +38,22 @@ onMounted(() => {
 <template>
   <div class="content" :style="{backgroundColor:props.backgroundColor}">
     <div ref="logoContainer" class="logo_name">
-      <img v-for="(img,index) in props.logoImg" :key="index" class="logo-image" :src="img.img"
+      <div class="flex gap-3 items-start">
+        <img src="@/assets/img/mobile/logoMobile.svg" class="hidden max-lg:block" alt="logo Precision">
+        <img src="@/assets/img/mobile/mobileIcon.svg" class="hidden max-lg:block" alt="">
+      </div>
+
+      <img v-for="(img,index) in props.logoImg" :key="index" class="logo-image max-lg:hidden" :src="img.img"
            :class="{'ml-[10px] logo-image animation-logo':index===9}" alt="Logo Name PRECISION">
     </div>
   </div>
   <div :style="{backgroundColor:props.backgroundColor}">
-    <div class="flex _container  justify-between items-center ">
-      <div class="footer-text w-[20%]" :class="`text-[${props.color}]`">
+    <div class="flex _container justify-between items-center ">
+      <div class="footer-text  w-[20%] max-lg:w-[80%]" :class="`text-[${props.color}]`">
         Precision-Focused
         <span class="text-[#F6733C]">Healthcare</span> Future
       </div>
-      <div @click="topScroll" class="flex gap-[7px] items-center text-scroll-down" :style="{color:props.color}">
+      <div @click="topScroll" class="flex gap-[7px] max-lg:hidden items-center text-scroll-down" :style="{color:props.color}">
         Scroll to explore <img class="animation-arrow" :src="props.arrowDown" alt="">
       </div>
     </div>
@@ -73,7 +77,7 @@ onMounted(() => {
 
 .content {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;

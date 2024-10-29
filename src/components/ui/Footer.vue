@@ -38,12 +38,15 @@ onMounted(() => {
   <div ref="triggerFooter" class="footer mt-[100px]">
     <LineWrapper change-color="white"/>
     <div class="_container">
-      <div class="flex justify-between mt-[50px]">
-        <div class="w-full">
+      <div class="flex justify-between max-lg:flex-col max-lg:gap-[40px] mt-[50px]">
+        <div class="w-full max-lg:flex max-lg:justify-between">
           <img class=" w-[179px]" src="@/assets/img/Logo.svg" alt="">
+          <div @click="topScroll" class="since-year  gap-2 items-end cursor-pointer max-lg:flex hidden">
+            Back to Top <img class="w-[20px]" src="@/assets/img/ArrowDown.svg" alt="">
+          </div>
         </div>
-        <div class="flex justify-between w-full">
-          <div class="flex flex-col gap-3">
+        <div class="flex justify-between w-full max-lg:grid max-lg:grid-cols-12">
+          <div class="flex flex-col gap-3 max-lg:col-span-6">
             <div class="footer-menu-text">
               Menu
             </div>
@@ -57,7 +60,7 @@ onMounted(() => {
               Contact Us
             </div>
           </div>
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3 max-lg:col-span-6">
             <div class="footer-menu-text">
               Socials
             </div>
@@ -71,7 +74,7 @@ onMounted(() => {
               Facebook
             </div>
           </div>
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3 max-lg:col-span-6">
             <div class="footer-menu-text">
               Legal
             </div>
@@ -82,7 +85,7 @@ onMounted(() => {
               Terms and Conditions
             </div>
           </div>
-          <div class="flex flex-col gap-3">
+          <div class="flex flex-col gap-3 max-lg:col-span-6">
             <div class="footer-menu-text">
               Contacts
             </div>
@@ -95,15 +98,15 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div class="flex justify-between mt-[100px] pb-[50px]">
-        <div class="footer-text-specialize text-[#CCBFA8] w-[20%]">
+      <div class="flex justify-between mt-[100px] max-lg:flex-col pb-[50px]">
+        <div class="footer-text-specialize text-[#CCBFA8] w-[20%] max-lg:w-full">
           <span class="text-white">We specialize </span> in providing
           precision <span class="text-white">focused </span> healthcare.
         </div>
-        <div class="since-year w-[20%] flex items-end">
+        <div class="since-year w-[20%] flex max-lg:justify-center max-lg:mt-[72px] items-end max-lg:w-full">
           © 2024 Precision Health Care Group
         </div>
-        <div @click="topScroll" class="since-year flex gap-2 items-end cursor-pointer">
+        <div @click="topScroll" class="since-year flex gap-2 items-end cursor-pointer max-lg:hidden">
           Back to Top <img class="w-[20px]" src="@/assets/img/ArrowDown.svg" alt="">
         </div>
       </div>

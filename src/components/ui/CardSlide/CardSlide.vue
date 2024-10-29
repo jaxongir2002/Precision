@@ -7,8 +7,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div :style="{background:props.info.background}" class="card_slide p-[50px] flex justify-between it">
-    <div class="flex flex-col justify-between w-full ">
+  <div :style="{background:props.info.background}" class="card_slide  p-[50px] max-lg:p-[25px]
+  flex justify-between max-lg:flex-col">
+    <div class="flex flex-col justify-between w-full">
       <div>
         <button class="btn_prince" :style="{color: props.info.color}">
           {{ props.info.buttonText }}
@@ -17,26 +18,25 @@ const props = defineProps({
           {{ props.info.header }}
         </div>
       </div>
-      <div class="text-description w-[60%]" :style="{color: props.info.color}">
+      <div class="text-description w-[60%] max-lg:w-full" :style="{color: props.info.color}">
         {{ props.info.description }}
       </div>
     </div>
     <div class="w-full">
-      <CardBuild v-if="props.info.id ===1"/>
-      <div v-else-if="props.info.id ===2" class="relative">
+      <CardBuild v-if="props.info.id === 1"/>
+      <div v-else-if="props.info.id === 2" class="relative">
         <div class="bg-[#F2EDE8] rounded-[30px] absolute p-[30px] bottom-[250px] right-[250px]">
           <img class="animation-logo" src="@/assets/img/IconLOGO.svg" alt="">
         </div>
         <img src="@/assets/img/CardSecond.svg" alt="">
       </div>
       <img src="@/assets/img/CardThird.svg" alt="" v-else-if="props.info.id ===3">
-
     </div>
     <div class="flex flex-col w-full justify-between items-end">
       <div class="number flex justify-end" :style="{color: props.info.color}">
         {{ props.info.id }}
       </div>
-      <img class="w-[227px] flex justify-end" src="@/assets/img/SlideFon.svg" alt="">
+      <img class="w-[227px] flex justify-end max-lg:hidden" src="@/assets/img/SlideFon.svg" alt="">
     </div>
   </div>
 </template>

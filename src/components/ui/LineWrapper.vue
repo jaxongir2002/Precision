@@ -1,5 +1,5 @@
 <script setup>
-import {ref, computed} from 'vue';
+import {ref} from 'vue';
 
 const props = defineProps({
   changeColor: {
@@ -44,28 +44,35 @@ const items = ref([
     text: 'Safety',
     title: 'security'
   },
+  {
+    text: 'Safety',
+    title: 'security'
+  },
+  {
+    text: 'Integrity',
+    title: ''
+  },
+  {
+    text: 'Safety',
+    title: 'security'
+  },
 ])
 
 </script>
 
 <template>
   <div class="infinity-line-wrapper pt-[34px] overflow-hidden relative">
-    <div
-        class="flex animate-infinite"
-
-    >
+    <div class="flex animate-infinite">
       <div v-for="(item,index) in items"
            :key="index"
            :style="{color: props.changeColor}"
-           class="infinity-line flex items-center gap-3"> / {{ item.text }}
+           class="infinity-line flex gap-3"> / {{ item.text }}
         <img src="@/assets/img/warperIcon.svg" alt=""/>
         {{ item.title }}
         <div class="flex justify-end relative left-[25px]">
           <img src="@/assets/img/Plus.svg" class="vectors-wrapper" alt=""/>
         </div>
-
       </div>
-
     </div>
   </div>
 </template>
@@ -88,14 +95,9 @@ const items = ref([
   white-space: nowrap;
 }
 
-
 .infinity-line-wrapper {
   width: 100%;
   overflow: hidden;
-}
-
-.flex {
-  display: flex;
 }
 
 .animate-infinite {
@@ -106,15 +108,10 @@ const items = ref([
 
 @keyframes scroll {
   0% {
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
   100% {
     transform: translateX(-50%); /* Adjust based on the number of items */
   }
-}
-
-.item {
-  min-width: 200px; /* Adjust based on your design */
-
 }
 </style>

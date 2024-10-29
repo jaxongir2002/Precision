@@ -16,13 +16,13 @@ function wordFade() {
     },
   });
   ballTimeline.add("start")
-  .from(chars, {
-    duration: 0.3, // Reduce duration for faster animation
-    yPercent: 130,
-    stagger: 0.01,
-    opacity: 0,
-    ease: 'power1',
-  });
+      .from(chars, {
+        duration: 0.3,
+        yPercent: 130,
+        stagger: 0.01,
+        opacity: 0,
+        ease: 'power1',
+      });
 }
 
 onMounted(() => {
@@ -40,7 +40,6 @@ onMounted(() => {
   wordFade()
   window.addEventListener('scroll', handleScroll);
 
-  // Cleanup event listener on component unmount
   onBeforeUnmount(() => {
     window.removeEventListener('scroll', handleScroll);
   });
@@ -48,18 +47,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="triggerItem" class="bg-[#300A0A] rounded-[30px] [30px] h-[850px] overflow-auto mt-[100px]">
-    <div class="pt-[100px]">
+  <div ref="triggerItem" class="bg-[#300A0A] rounded-[30px] h-[850px] max-lg:h-[603px] overflow-auto mt-[100px]">
+    <div class="pt-[100px] max-lg:pt-[25px]">
       <LineWrapper change-color="#FFF"/>
     </div>
     <div class="grid grid-cols-12 _container">
-      <div class="text-mission flex gap-[16px] items-center col-span-4 relative bottom-[13%]">
+      <div
+          class="text-mission flex gap-[16px] max-lg:mt-[80px] items-center col-span-4 relative bottom-[13%] max-lg:col-span-12">
         <img class="animation-logo" src="@/assets/img/OurPhilosophy.svg" alt=""> Our mission
       </div>
-      <div class="text-[50px]  text-[#fff] font-medium leading-[52px] col-span-6 w-[90%] mt-[100px]">
+      <div
+          class="text-[50px] max-lg:mt-[32px] max-lg:text-[30px] max-lg:w-full max-lg:leading-[130%] max-lg:col-span-12 text-[#fff] font-medium leading-[52px] col-span-6 w-[90%] mt-[100px]">
         <span class="text-[#F5733D] text-animate-mission"> Precision Health Care Services</span>
         <span class="text-animate-mission"> is dedicated to providing personalized and dignified care.</span>
-        <div class="mt-[33px] text-mission">
+        <div class="mt-[33px] text-mission text-[35px] max-lg:text-[16px]">
           Our commitment to <span class="marker-first"> <span class="relative z-10">integrity safety,</span></span> and
           forward-thinking solutions ensures
           continuous growth and <span class="marker-second"><span class="relative z-10">excellence in healthcare.</span></span>
@@ -74,7 +75,6 @@ onMounted(() => {
 .text-mission {
   color: var(--White, #FFF);
   font-family: "Neue Haas Grotesk  Display Pro", sans-serif;
-  font-size: 25px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%;

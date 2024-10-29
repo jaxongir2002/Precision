@@ -105,7 +105,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="transition-all">
+  <div class="transition-all max-lg:hidden _container">
     <div class="text-excellence flex gap-[16px] items-center col-span-4 relative bottom-[13%] mt-[80px]">
       <img src="@/assets/img/OurPhilosophy.svg" alt="Excellence in care"> Excellence in care
     </div>
@@ -147,6 +147,26 @@ onMounted(() => {
         </div>
       </div>
     </div>
+  </div>
+<!--  mobile version-->
+  <div class="max-lg:block hidden _container">
+    <CardSlide
+
+        :info="items[0]"
+        class="mt-[48px]"
+    >
+      <template #image>
+        <card-build/>
+      </template>
+    </CardSlide>
+    <CardSlide
+        :info="items[1]"
+        class="mt-[48px]  "
+    />
+    <CardSlide
+        :info="items[2]"
+        class="mt-[48px] "
+    />
   </div>
 </template>
 

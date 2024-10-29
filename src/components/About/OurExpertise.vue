@@ -26,26 +26,25 @@ onMounted(() => {
 
 <template>
   <div ref="scrollRegister" class="main-our pt-[80px]">
-
     <div class="text-philosophy _container flex gap-[16px]">
       <img class="animation-logo" src="@/assets/img/OurPhilosophy.svg" alt=""> About
     </div>
     <div class="grid grid-cols-12 _container">
-      <div class="col-span-4 mt-[100px]">
+      <div class="col-span-4 mt-[100px] max-lg:col-span-12 max-lg:hidden">
         <img src="@/assets/img/LogoAbout.svg" alt="">
       </div>
-      <div class="col-span-5 mt-[100px]">
+      <div class="col-span-5 mt-[100px] max-lg:col-span-10 max-lg:mt-[25px]">
         <div ref="title"
-             class="text-[50px] text-[#300A0A] text-animation_our font-medium leading-[52px]">
+             class="text-[50px] max-lg:text-[24px] leading-[130%] text-[#300A0A] text-animation_our font-medium">
           Precision <span class="text-[#F5733D]">Health Care</span> Group is dedicated to providing personalized and
           dignified care.
         </div>
-        <div class="text-philosophy mt-10">
+        <div class="text-philosophy text-[25px] max-lg:text-[16px] mt-10 max-lg:mt-[28px]">
           Our commitment to integrity, safety, and forward-thinking solutions ensures continuous growth and excellence
           in
           healthcare.
         </div>
-        <ButtonPr label="Our expertise" class="mt-[110px]"/>
+        <ButtonPr label="Our expertise" class="mt-[110px] max-lg:mt-[60px]"/>
       </div>
 
     </div>
@@ -53,6 +52,11 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+@media (max-width: 767px) {
+  .main-our{
+    height: 65vh !important;
+  }
+}
 .main-our {
   border-radius: 30px 30px 0 0;
   background: #FFF;
@@ -63,7 +67,6 @@ onMounted(() => {
 .text-philosophy {
   color: #300A0A;
   font-family: "Neue Haas Grotesk Display Pro", sans-serif;
-  font-size: 25px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%;

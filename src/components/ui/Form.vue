@@ -49,10 +49,10 @@ onMounted(() => {
     <div class="text-mission flex gap-[16px] items-center col-span-4 relative bottom-[13%] mt-[100px]">
       <img src="@/assets/img/OurPhilosophy.svg" alt=""> Contact Us
     </div>
-    <div class="grid grid-cols-12 mt-[70px]">
-      <div class="col-span-6 w-[40%]">
-        <div class="flex flex-col justify-between gap-[70px]">
-          <div class="header-text text-[#300A0A] text-health-animate">
+    <div class="grid grid-cols-12 mt-[70px] max-lg:mt-[25px]">
+      <div class="col-span-6 max-lg:col-span-12 w-[40%] max-lg:w-[80%]">
+        <div class="flex flex-col justify-between gap-[70px] max-lg:gap-[30px]">
+          <div class="header-text text-[40px] max-lg:text-[30px] text-[#300A0A] text-health-animate">
             Empowering <span class="text-[#F5733D]">Health</span>.
             Elevating <span class="text-[#F5733D]">Care</span>.
           </div>
@@ -83,11 +83,11 @@ onMounted(() => {
           </div>
         </div>
       </div>
-      <div class="col-span-6 card-left">
+      <div class="col-span-6 card-left max-lg:col-span-12 max-lg:mt-[20px]">
         <div v-if="modalFinish" class="contacts-text">
           Contact Us
         </div>
-        <div v-if="modalFinish" class="mt-[45px]">
+        <div v-if="modalFinish" class="mt-[45px] max-lg:mt-[40px]">
           <Input placeholder="Name">
           </Input>
           <Input placeholder="Email">
@@ -120,13 +120,18 @@ onMounted(() => {
 </template>
 
 <style scoped lang="scss">
+@media (max-width: 767px){
+  .card-left {
+    border-left:none !important;
+    padding-left:0 !important;
+  }
+}
 .card-left {
   border-left: 1px solid #CCBFA8;
   padding-left: 100px;
 }
 
 .header-text {
-  font-size: 40px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%; /* 52px */

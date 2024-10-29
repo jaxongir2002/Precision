@@ -5,22 +5,25 @@ import {Vue3Lottie} from "vue3-lottie";
 import Navigation from "@/components/ui/Navigation.vue";
 import {useRoute} from "vue-router";
 
-const animation = ref(new URL('@/assets/animates/data.json', import.meta.url));
 const store = useLenisStore();
+
+const animation = ref(new URL('@/assets/animates/data.json', import.meta.url));
 const showLoader = ref(true);
 const classAnimate = ref(false);
+
 const route = useRoute();
+
 onMounted(() => {
   store.initLenis();
 
-  const hasVisited = localStorage.getItem('hasVisited');
+  const hasVisited = sessionStorage.getItem('hasVisited');
   if (hasVisited) {
     showLoader.value = false;
   }
 });
 
 const onAnimationComplete = () => {
-  localStorage.setItem('hasVisited', 'true');
+  sessionStorage.setItem('hasVisited', 'true');
   showLoader.value = false;
 };
 
@@ -40,7 +43,7 @@ const closeAbout = new URL('@/assets/img/About/close.svg', import.meta.url);
 
 const infoMenuHome = {
   backgroundColor: '#300A0A',
-  color: '#fff',
+  color: '#F2EDE8',
   img: new URL('@/assets/img/animation.svg', import.meta.url),
 };
 

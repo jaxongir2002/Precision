@@ -40,6 +40,14 @@ onMounted(() => {
 </script>
 
 <style scoped lang="scss">
+@media (max-width: 767px) {
+  .text-innovating {
+    font-size: 30px !important;
+    width: 100% !important;
+  }
+
+}
+
 .text-innovating {
   font-size: 80px;
   font-style: normal;

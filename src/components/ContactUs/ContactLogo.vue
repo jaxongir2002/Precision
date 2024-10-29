@@ -55,12 +55,16 @@ onMounted(() => {
 <template>
   <div class=" _container rounded-[20px] relative z-10 top-[220px]" :style="{backgroundColor:'#300A0A'}">
     <div ref="logoContainer" class="logo_name content">
-      <img v-for="(img,index) in logoImg" :key="index" class="logo-image" :src="img.img"
-           :class="{'ml-[10px] logo-image animation-logo':index===9}" alt="Logo Name PRECISION">
+      <div class="flex gap-3 items-start">
+        <img src="@/assets/img/mobile/logoMobile.svg" class="hidden max-lg:block" alt="logo Precision">
+        <img src="@/assets/img/mobile/mobileIcon.svg" class="hidden max-lg:block" alt="">
+      </div>
+      <img v-for="(img,index) in logoImg" :key="index" class="logo-image max-lg:hidden" :src="img.img"
+           :class="{'ml-[10px] logo-image animation-logo ':index===9}" alt="Logo Name PRECISION">
     </div>
     <div>
       <div class="flex _container  justify-between items-center">
-        <div class="footer-text w-[20%] text-[#fff]">
+        <div class="footer-text w-[20%] max-lg:w-full text-[#fff]">
           Precision-Focused
           <span class="text-[#F6733C]">Healthcare</span> Future
         </div>

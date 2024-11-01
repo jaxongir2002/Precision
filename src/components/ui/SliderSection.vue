@@ -47,32 +47,33 @@ onMounted(() => {
         :spaceBetween="20"
         :pagination="{ clickable: true }"
         :modules="modules"
+        :loop="true"
         class="mySwiper"
         :flip-effect="false"
         :navigation="true"
         :breakpoints="{
       '@0.00': {
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 10
       },
       '@0.75': {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 20
       },
       '@1.00': {
         slidesPerView: 1,
-        spaceBetween: 40,
+        spaceBetween: 40
       },
       '@1.50': {
         slidesPerView: 1,
-        spaceBetween: 50,
-      },
+        spaceBetween: 50
+      }
     }"
     >
       <swiper-slide v-for="(item, index) in 5" :key="index">
         <div class="flex justify-between mt-[75px] max-lg:flex-col">
           <div class="w-[20%] max-lg:w-full">
-            <div class="text-stories text-stories-animate text-[#300A0A] w-[80%]">
+            <div class="text-stories text-stories-animate text-[#300A0A] w-[70%]">
               Real <span class="text-[#F5733D]">Stories</span>,
               Real <span class="text-[#F5733D]">Care</span>.
             </div>
@@ -84,7 +85,7 @@ onMounted(() => {
           <div class="w-[33%] max-lg:w-full">
             <img class="relative bottom-[20px] max-lg:static max-lg:mb-3 max-lg:mt-[40px] right-[20px]"
                  src="@/assets/img/Mark.svg" alt="">
-            <div class="text-description text-stories-animate text-[28px] max-lg:text-[18px]">
+            <div class="text-description text-[28px] max-lg:text-[18px]">
               Lorem ipsum dolor sit amet consectetur. Diam netus sapien netus iaculis dignissim. Lorem ipsum dolor sit
               amet
               consectetur. Diam netus sapien netus iaculis dignissim.
@@ -118,7 +119,10 @@ onMounted(() => {
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   position: absolute !important;
 }
-
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+border: #300A0A solid 1px;
+}
 .swiper-button-prev {
   position: absolute !important;
   top: 89%;

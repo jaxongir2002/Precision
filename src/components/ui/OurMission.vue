@@ -28,13 +28,13 @@ function wordFade() {
 onMounted(() => {
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
-    const markerFirst = document.querySelector('.marker-first');
-    const markerSecond = document.querySelector('.marker-second');
-
-    if (currentScrollPos >= 4300) {
-      console.log()
+    const markerFirst = document.querySelector('.marker_first');
+    const markerSecond = document.querySelector('.marker_second');
+    if (currentScrollPos >= 2900) {
       markerFirst.classList.add('animate');
       markerSecond.classList.add('animate');
+      markerFirst.classList.add('marker-first');
+      markerSecond.classList.add('marker-second');
     }
   };
   wordFade()
@@ -61,9 +61,9 @@ onMounted(() => {
         <span class="text-[#F5733D] text-animate-mission"> Precision Health Care Services</span>
         <span class="text-animate-mission"> is dedicated to providing personalized and dignified care.</span>
         <div class="mt-[33px] text-mission text-[35px] max-lg:text-[16px]">
-          Our commitment to <span class="marker-first"> <span class="relative z-10">integrity safety,</span></span> and
+          Our commitment to <span class=" marker_first"> <span class="relative z-10">integrity safety,</span></span> and
           forward-thinking solutions ensures
-          continuous growth and <span class="marker-second"><span class="relative z-10">excellence in healthcare.</span></span>
+          continuous growth and <span class=" marker_second"><span class="relative z-10">excellence in healthcare.</span></span>
         </div>
       </div>
     </div>
@@ -75,6 +75,7 @@ onMounted(() => {
 .text-mission {
   color: var(--White, #FFF);
   font-family: "Neue Haas Grotesk  Display Pro", sans-serif;
+  font-size: 25px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%;

@@ -18,7 +18,7 @@ const props = defineProps({
           {{ props.info.header }}
         </div>
       </div>
-      <div class="text-description w-[60%] max-lg:w-full" :style="{color: props.info.color}">
+      <div class="text-description w-[70%] max-lg:w-full" :style="{color: props.info.color}">
         {{ props.info.description }}
       </div>
     </div>
@@ -30,7 +30,12 @@ const props = defineProps({
         </div>
         <img src="@/assets/img/CardSecond.svg" alt="">
       </div>
-      <img src="@/assets/img/CardThird.svg" alt="" v-else-if="props.info.id ===3">
+      <div class="relative" v-else-if="props.info.id ===3">
+        <img src="@/assets/img/IconLOGO.svg" class="absolute top-[267px] animation-logo
+        left-[37.8px] max-2xl:top-[259px] max-2xl:left-[36px] w-[35px]" alt="">
+        <img src="@/assets/img/CardThird.svg" alt="">
+      </div>
+
     </div>
     <div class="flex flex-col w-full justify-between items-end">
       <div class="number flex justify-end" :style="{color: props.info.color}">
@@ -70,10 +75,10 @@ const props = defineProps({
 
   .text-description {
     color: #300A0A;
-    font-size: 16px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 160%; /* 25.6px */
+    line-height: 130%; /* 25.6px */
   }
 
   .number {

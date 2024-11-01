@@ -50,12 +50,11 @@ label {
   left: 5px;
   top: 10px;
   transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
 }
 
-/* active state */
-input:focus ~ label, input:valid ~ label {
+input:focus ~ label,
+input:valid ~ label,
+input:hover ~ label {
   top: -20px;
   font-size: 14px;
   color: #300A0A;
@@ -76,8 +75,6 @@ input:focus ~ label, input:valid ~ label {
   position: absolute;
   background: #F5733D;
   transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
 }
 
 .bar:before {
@@ -88,8 +85,11 @@ input:focus ~ label, input:valid ~ label {
   right: 50%;
 }
 
-/* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+/* active and hover state */
+input:focus ~ .bar:before,
+input:focus ~ .bar:after,
+input:hover ~ .bar:before,
+input:hover ~ .bar:after {
   width: 50%;
 }
 
@@ -105,33 +105,12 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
-  -webkit-animation: inputHighlighter 0.3s ease;
-  -moz-animation: inputHighlighter 0.3s ease;
+input:focus ~ .highlight,
+input:hover ~ .highlight {
   animation: inputHighlighter 0.3s ease;
 }
 
 /* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from {
-    background: #F5733D;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-
-@-moz-keyframes inputHighlighter {
-  from {
-    background: #F5733D;
-  }
-  to {
-    width: 0;
-    background: transparent;
-  }
-}
-
 @keyframes inputHighlighter {
   from {
     background: #F5733D;

@@ -11,7 +11,7 @@ import USEmap from "@/components/ui/USEmap.vue";
     </div>
     <USEmap/>
     <div class="flex justify-between pb-[40px]">
-      <div class="text-map text-[#300A0A] w-[20%]">
+      <div class="text-map text-[#300A0A] w-[30%]">
         Mapping the
         <span class="text-[#F5733D]">Future</span> of Healthcare.
       </div>
@@ -42,6 +42,7 @@ import USEmap from "@/components/ui/USEmap.vue";
   text-edge: cap;
   font-size: 40px;
   font-style: normal;
+  letter-spacing: 0.3px;
   font-weight: 500;
   line-height: 130%; /* 52px */
 }

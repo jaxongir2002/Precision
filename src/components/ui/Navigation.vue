@@ -95,7 +95,7 @@ watch(openMenu, (newValue) => {
     }">
     <nav class="flex justify-between items-center _container" style="padding-top: 28px">
       <div class="logo">
-        <img class="w-[190px] h-[30px]" :src="props.logo" alt="Precision Logo">
+        <img @click="router.push('/')" class="w-[190px] h-[30px]" :src="props.logo" alt="Precision Logo">
       </div>
       <div>
         <button class="menu flex gap-2.5 items-center max-lg:hidden">

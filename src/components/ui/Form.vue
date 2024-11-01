@@ -145,6 +145,10 @@ onMounted(() => {
   line-height: 130%; /* 23.4px */
 }
 
+.btn-animation-links:hover{
+  border: 1px solid var(--Beige, #CCBFA8);
+  background: var(--Beige, #CCBFA8);
+}
 .btn-animation-links {
   display: flex;
   width: 230px;
@@ -153,13 +157,14 @@ onMounted(() => {
   align-items: center;
   gap: 8px;
   border-radius: 500px;
-  border: 1px solid var(--Beige, #CCBFA8);
-  background: var(--Beige, #CCBFA8);
+  border: 1px solid var(--Beige, #300A0A);
+  background: var(--Beige, #300A0A);
   color: var(--White, #FFF);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 130%; /* 20.8px */
+  transition: background-color 0.3s;
 }
 
 .text-description {

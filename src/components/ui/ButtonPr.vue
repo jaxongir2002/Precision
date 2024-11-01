@@ -12,6 +12,7 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
+
 .button-precision {
   display: flex;
   padding: 12px 24px;
@@ -31,10 +32,11 @@ const props = defineProps({
 
 .button-precision:hover {
   transform: scale(1.02);
+  background:  #F5733D ;
 }
 
 .button-precision:hover img {
-  animation: arrow-left .5s alternate infinite;
+  animation: arrow-left .3s alternate infinite;
 }
 
 @keyframes arrow-left {

@@ -17,7 +17,8 @@
     <div class="mt-[72px] max-lg:mt-[60px] relative top-[152px] flex justify-between max-lg:flex-col">
       <div class="">
         <div class="flex gap-[20px] items-center justify-end">
-          <div class="w-[65px] h-[65px] max-lg:w-[50px] max-lg:h-[50px] flex justify-center items-center bg-[#300A0A] rounded-full p-[15px]">
+          <div class="w-[65px] h-[65px] max-lg:w-[50px] max-lg:h-[50px] flex justify-center
+           items-center bg-[#300A0A] rounded-full p-[15px]">
             <img class="animation-logo" src="@/assets/img/LogoElement.svg" alt="">
           </div>
           <div class="text-route text-[80px] max-lg:text-[38px] tracking-[0.3px]">
@@ -28,7 +29,8 @@
           <div class="text-route text-[80px] max-lg:text-[38px] tracking-[0.3px]">
             HEAR FROM YOU
           </div>
-          <div class="w-[65px] h-[65px] max-lg:w-[50px] max-lg:h-[50px] flex justify-center items-center bg-[#BFCCCF] rounded-full">
+          <div class="w-[65px] h-[65px] max-lg:w-[50px] max-lg:h-[50px] flex
+          justify-center items-center bg-[#BFCCCF] rounded-full">
             <img src="@/assets/img/sendIcon.svg" alt="">
           </div>
         </div>

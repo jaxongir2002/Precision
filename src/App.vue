@@ -96,9 +96,9 @@ const infoMenu = computed(() => {
       :background-color="infoMenu.backgroundColor"
       :color="infoMenu.color"
   />
-  <Transition name="fade">
+
     <router-view v-if="!showLoader"/>
-  </Transition>
+
 </template>
 
 <style scoped lang="scss">

@@ -1,6 +1,9 @@
 <script setup>
 const props = defineProps({
-  label: String,
+  label: {
+    type:String,
+    default: '',
+  },
 })
 </script>
 
@@ -12,7 +15,6 @@ const props = defineProps({
 </template>
 
 <style scoped lang="scss">
-
 .button-precision {
   display: flex;
   padding: 12px 24px;

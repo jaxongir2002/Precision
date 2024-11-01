@@ -27,12 +27,12 @@ const info = ref([
     </div>
     <div class="flex flex-col gap-[160px] max-lg:gap-[48px]">
       <div v-for="(items,index) in info" :key="index" class="title text-[25px] flex gap-3 max-lg:flex-col">
-        <div class="rounded-full w-[52px] h-[52px] bg-[#F5733D] flex justify-center items-center">
+        <div class="rounded-full max-lg:w-[45px] max-lg:h-[45px] w-[52px] h-[52px] bg-[#F5733D] flex justify-center items-center">
           <img class="animation-logo" src="@/assets/img/About/logoRounded.svg" alt="">
         </div>
-        <div class="mt-2">
+        <div class="mt-2 tracking-[0.3px]">
           {{ items.title }}
-          <div class="title text-[20px] mt-3 w-[45%] max-lg:w-full">
+          <div class="title text-[20px] mt-3 w-[45%] max-lg:w-[85%] tracking-[0.3px]">
             {{ items.description }}
           </div>
         </div>

@@ -14,6 +14,7 @@ const items = ref([
     description: 'At Precision, our philosophy is ' +
         ' guided by eight essential values that shape every aspect of the care we provide:',
     buttonText: 'Guided by Principles',
+    borderColor:'#300A0A'
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const items = ref([
     description: 'Redefining Health Care with Innovation & Compassion.' +
         ' We believe that every individual deserves compassionate care, and that is why we put people first. ',
     buttonText: 'Innovative Compassion',
+    borderColor:'#F2EDE8'
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const items = ref([
     description: 'Whether it’s through personalized attention, cutting-edge treatments, or our commitment to patient safety, Precision Health' +
         ' Care Group stands apart for its dedication to enhancing the lives of those we care for. ',
     buttonText: 'Dedicated Excellence',
+    borderColor:'#300A0A'
   }
 ]);
 
@@ -76,7 +79,7 @@ onMounted(() => {
   });
   tl.to(".card-wrapper:not(:first-child)", {
     yPercent: (i) => -210 * (i + 1),
-    duration: time / 1.3,
+    duration: time ,
     stagger: time
   });
 
@@ -151,7 +154,6 @@ onMounted(() => {
 <!--  mobile version-->
   <div class="max-lg:block hidden _container">
     <CardSlide
-
         :info="items[0]"
         class="mt-[48px]"
     >
@@ -219,7 +221,7 @@ onMounted(() => {
 
 .card {
   position: relative;
-  transition: transform 0.8s ease, all 0.8s ease;
+  transition: transform 1s ease, all 1s ease;
 }
 
 .card-active {

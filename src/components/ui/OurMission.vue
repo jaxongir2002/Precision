@@ -24,7 +24,9 @@ function wordFade() {
         ease: 'power1',
       });
 }
-
+function isMobile() {
+  return window.innerWidth <= 767; // Adjust the breakpoint as needed
+}
 onMounted(() => {
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -35,6 +37,15 @@ onMounted(() => {
       markerSecond.classList.add('animate');
       markerFirst.classList.add('marker-first');
       markerSecond.classList.add('marker-second');
+    }
+    if (isMobile()){
+      if (currentScrollPos >= 2600) {
+        markerFirst.classList.add('animate');
+        markerSecond.classList.add('animate');
+        markerFirst.classList.add('marker-first');
+        markerSecond.classList.add('marker-second');
+      }
+
     }
   };
   wordFade()
@@ -47,7 +58,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="triggerItem" class="bg-[#300A0A] rounded-[30px] h-[850px] max-lg:h-[603px] overflow-auto mt-[100px]">
+  <div ref="triggerItem"
+       class="bg-[#300A0A] rounded-[30px] h-[850px] max-lg:h-[603px] overflow-auto mt-[100px] max-lg:mt-[20px]">
     <div class="pt-[100px] max-lg:pt-[25px]">
       <LineWrapper change-color="#FFF"/>
     </div>
@@ -56,14 +68,16 @@ onMounted(() => {
           class="text-mission flex gap-[16px] max-lg:mt-[80px] items-center col-span-4 relative bottom-[13%] max-lg:col-span-12">
         <img class="animation-logo" src="@/assets/img/OurPhilosophy.svg" alt=""> Our mission
       </div>
-      <div
-          class="text-[50px] max-lg:mt-[32px] max-lg:text-[30px] max-lg:w-full max-lg:leading-[130%] max-lg:col-span-12 text-[#fff] font-medium leading-[52px] col-span-6 w-[90%] mt-[100px]">
+      <div class="text-[50px] max-lg:mt-[32px] max-lg:text-[30px]
+           max-lg:w-full max-lg:leading-[130%] max-lg:col-span-12 text-[#fff]
+           font-medium leading-[52px] col-span-6 w-[90%] mt-[100px]">
         <span class="text-[#F5733D] text-animate-mission"> Precision Health Care Services</span>
         <span class="text-animate-mission"> is dedicated to providing personalized and dignified care.</span>
-        <div class="mt-[33px] text-mission text-[35px] max-lg:text-[16px]">
+        <div class="mt-[33px] text-mission text-[35px] max-lg:leading-[200%] max-lg:text-[16px] leading-[130%]">
           Our commitment to <span class=" marker_first"> <span class="relative z-10">integrity safety,</span></span> and
           forward-thinking solutions ensures
-          continuous growth and <span class=" marker_second"><span class="relative z-10">excellence in healthcare.</span></span>
+          continuous growth and <span class="marker_second"><span class="relative z-10">
+          excellence in healthcare.</span></span>
         </div>
       </div>
     </div>
@@ -75,17 +89,15 @@ onMounted(() => {
 .text-mission {
   color: var(--White, #FFF);
   font-family: "Neue Haas Grotesk  Display Pro", sans-serif;
-  font-size: 25px;
   font-style: normal;
   font-weight: 500;
-  line-height: 130%;
 
 }
 
 .marker-first, .marker-second {
   border-radius: 500px;
   padding-left: 3px;
-  color: #fff;
+  color: #fff !important;
   position: relative;
   transition: opacity 0.5s ease-in-out;
 
@@ -111,11 +123,11 @@ onMounted(() => {
 }
 
 .marker-first::before {
-  background: #CCBFA8;
+  background: #CCBFA8 !important;
 }
 
 .marker-second::before {
-  background: #F5733D;
+  background: #F5733D !important;
 }
 
 @keyframes drawEffectFirst {

@@ -41,6 +41,8 @@ const logoImg = ref([
 ]);
 const arrowDown = ref(new URL('@/assets/img/About/ArrowAbout.svg', import.meta.url));
 const heroSection = ref(null);
+const logoMobileVersion = ref(new URL('@/assets/img/LogoNameAbout/mobileVersion.svg', import.meta.url));
+const iconMobile = ref(new URL('@/assets/img/mobile/IconMobile.svg', import.meta.url));
 const pictureGallerySection = ref(null);
 
 const handleScroll = () => {
@@ -74,7 +76,8 @@ onBeforeUnmount(() => {
 <template>
   <div class="scrollContainer _2 bg-[#F2EDE8] relative">
     <section ref="heroSection" class="hero div-block-27" id="hero">
-      <Content :logo-img="logoImg" color="#300A0A" :arrow-down="arrowDown"/>
+      <Content :icon-mobile="iconMobile" :mobile-version="logoMobileVersion" :logo-img="logoImg" color="#300A0A"
+               :arrow-down="arrowDown"/>
     </section>
     <section ref="pictureGallerySection" id="picture-gallery" class="picture-gallery div-block-27 z-10">
       <OurExpertise/>

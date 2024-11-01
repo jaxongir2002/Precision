@@ -37,7 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div ref="triggerFooter" class="footer mt-[100px]">
+  <div ref="triggerFooter" class="footer mt-[100px] max-lg:mt-[50px]">
     <LineWrapper change-color="white"/>
     <div class="_container">
       <div class="flex justify-between max-lg:flex-col max-lg:gap-[40px] mt-[50px]">
@@ -76,18 +76,7 @@ onMounted(() => {
               Facebook
             </div>
           </div>
-          <div class="flex flex-col gap-3 max-lg:col-span-6">
-            <div class="footer-menu-text">
-              Legal
-            </div>
-            <div class="footer-menu-text">
-              Privacy Policy
-            </div>
-            <div class="footer-menu-text">
-              Terms and Conditions
-            </div>
-          </div>
-          <div class="flex flex-col gap-3 max-lg:col-span-6">
+          <div class="flex flex-col gap-3 max-lg:col-span-12 max-lg:mt-[30px]">
             <div class="footer-menu-text">
               Contacts
             </div>
@@ -98,6 +87,18 @@ onMounted(() => {
               Howell, New Jersey
             </div>
           </div>
+          <div class="flex flex-col gap-3 max-lg:col-span-12 max-lg:mt-[30px]">
+            <div class="footer-menu-text">
+              Legal
+            </div>
+            <div class="footer-menu-text">
+              Privacy Policy
+            </div>
+            <div class="footer-menu-text">
+              Terms and Conditions
+            </div>
+          </div>
+
         </div>
       </div>
       <div class="flex justify-between mt-[100px] max-lg:flex-col pb-[50px]">

@@ -35,11 +35,11 @@ onMounted(() => {
       </div>
       <div class="col-span-5 mt-[100px] max-lg:col-span-10 max-lg:mt-[25px]">
         <div ref="title"
-             class="text-[50px] max-lg:text-[24px] leading-[130%] text-[#300A0A] text-animation_our font-medium">
+             class="text-[50px] max-lg:text-[24px] leading-[130%] tracking-[3px] text-[#300A0A] text-animation_our font-medium">
           Precision <span class="text-[#F5733D]">Health Care</span> Group is dedicated to providing personalized and
           dignified care.
         </div>
-        <div class="text-philosophy text-[25px] max-lg:text-[16px] mt-10 max-lg:mt-[28px]">
+        <div class="text-philosophy text-[25px] tracking-[0.2px] max-lg:text-[16px] mt-10 max-lg:mt-[28px]">
           Our commitment to integrity, safety, and forward-thinking solutions ensures continuous growth and excellence
           in
           healthcare.

@@ -134,7 +134,7 @@ const info = ref([
     flex-shrink: 1;
     border-radius: 20px;
     background: var(--White, #FFF);
-    padding: 20px;
+    padding: 15px;
     position: relative;
   }
 }

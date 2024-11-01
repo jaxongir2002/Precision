@@ -26,25 +26,29 @@ function isMobile() {
 // }
 
 function initRegisterAnimation() {
-  tl = gsap.timeline({
+  const isMobileDevice = isMobile(); // Check if the device is mobile
+  const endPosition = isMobileDevice ? '70%' : '130%'; // Set end position based on device
+
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: scrollRegister.value,
       start: 'top 3%',
       pin: true,
-      end: '130%',
+      end: endPosition,
       scrub: true,
     },
   });
 
   tl.from(imgRotate.value, {
-    scale: '0.3',
-    rotate: '180deg'
+    scale: isMobileDevice ? 0.3 : 0.3, // Same scale for mobile
+    rotate: isMobileDevice ? '160deg' : '180deg',
   })
-  tl.to(imgRotate.value, {
-    duration: 0.3,
-    scale: isMobile() ? 0.8 : '1.1',
-    rotate: '-160deg',
-  })
+      .to(imgRotate.value, {
+        duration:isMobileDevice ?0.1: 0.3,
+        scale: isMobileDevice ? 0.8 : 1.1, // Adjust scale for mobile
+        rotate: isMobileDevice ? '0deg' : '-160deg',
+      });
+
   return tl;
 }
 
@@ -66,7 +70,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div ref="scrollRegister" class="main-our">
+  <div ref="scrollRegister" class="main-our h-[100vh]">
     <LineWrapper/>
     <div class="grid grid-cols-12 _container max-lg:mt-[60px]">
       <div class="text-philosophy flex gap-[16px] items-center col-span-4 max-lg:col-span-12 ">
@@ -86,7 +90,6 @@ onBeforeUnmount(() => {
 .main-our {
   border-radius: 30px 30px 0 0;
   background: #FFF;
-  height: 100vh;
   margin-top: 40px;
 }
 

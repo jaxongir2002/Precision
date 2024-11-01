@@ -7,6 +7,8 @@ const props = defineProps({
   backgroundColor:String,
   color: String,
   arrowDown:String,
+  mobileVersion:String,
+  iconMobile:String
 });
 
 const logoContainer = ref(null);
@@ -39,8 +41,8 @@ onMounted(() => {
   <div class="content" :style="{backgroundColor:props.backgroundColor}">
     <div ref="logoContainer" class="logo_name">
       <div class="flex gap-3 items-start">
-        <img src="@/assets/img/mobile/logoMobile.svg" class="hidden max-lg:block" alt="logo Precision">
-        <img src="@/assets/img/mobile/mobileIcon.svg" class="hidden max-lg:block" alt="">
+        <img :src="props.mobileVersion" class="hidden max-lg:block " alt="logo Precision">
+        <img :src="props.iconMobile" class="hidden w-[30px] h-[30px] max-lg:block animation-logo" alt="">
       </div>
 
       <img v-for="(img,index) in props.logoImg" :key="index" class="logo-image max-lg:hidden" :src="img.img"

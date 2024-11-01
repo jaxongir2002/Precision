@@ -52,7 +52,7 @@ onMounted(() => {
     <div class="grid grid-cols-12 mt-[70px] max-lg:mt-[25px]">
       <div class="col-span-6 max-lg:col-span-12 w-[40%] max-lg:w-[80%]">
         <div class="flex flex-col justify-between gap-[70px] max-lg:gap-[30px]">
-          <div class="header-text text-[40px] max-lg:text-[30px] text-[#300A0A] text-health-animate">
+          <div class="header-text text-[40px] max-lg:w-[90%] max-lg:text-[30px] text-[#300A0A] text-health-animate">
             Empowering <span class="text-[#F5733D]">Health</span>.
             Elevating <span class="text-[#F5733D]">Care</span>.
           </div>
@@ -66,7 +66,7 @@ onMounted(() => {
           </div>
           <div>
             <img src="@/assets/img/IconHelath.svg" alt="">
-            <div class="text-description w-[70%] mt-4">
+            <div class="text-description w-[70%] mt-4 max-lg:w-full">
               Get in touch with us to share your project idea or propose a partnership. We're also here to offer advice
               and
               have a chat if that's what you're seeking.
@@ -100,10 +100,10 @@ onMounted(() => {
           </Input>
           <button-pr @click="modalFinish =false" label="Send message"/>
         </div>
-        <div v-else class="flex justify-center items-center h-full">
+        <div v-else class="flex justify-center items-center h-full max-lg:relative top-[100px]">
           <div ref="finishModal" class="finish-modal text-[36px] font-medium leading-[46px] text-center">
             <div class="text-[#300A0A33] ">
-              <span class="text-[#300A0A]">Thank You,</span> Robert!
+              <span class="text-[#300A0A]">Thank You</span>
             </div>
             <div class=" text-[18px] font-medium leading-[23px] mt-4">
               Your submission has been received.

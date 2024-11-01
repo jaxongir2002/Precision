@@ -24,11 +24,10 @@ function wordFade() {
   });
   ballTimeline.add("start")
       .from(chars, {
-        duration: 0.3,
+        duration: 0.5,
         yPercent: 130,
-        stagger: 0.01,
         opacity: 0,
-        ease: 'sine',
+        ease: 'fade-in',
       });
 }
 
@@ -73,7 +72,7 @@ onMounted(() => {
       <swiper-slide v-for="(item, index) in 5" :key="index">
         <div class="flex justify-between mt-[75px] max-lg:flex-col">
           <div class="w-[20%] max-lg:w-full">
-            <div class="text-stories text-stories-animate text-[#300A0A] w-[70%]">
+            <div class="text-stories text-stories-animate text-[#300A0A] w-[70%] max-lg:w-[40%]">
               Real <span class="text-[#F5733D]">Stories</span>,
               Real <span class="text-[#F5733D]">Care</span>.
             </div>
@@ -137,26 +136,19 @@ border: #300A0A solid 1px;
 }
 
 @media (max-width: 768px) {
-  .swiper{
-    //position: static !important;
-  }
-  .swiper-button-prev,
-  .swiper-button-next {
-    top: 100%;
-    width: 50px;
-    height: 50px;
-    display: none !important;
+  .swiper-slide{
+  height: 64vh !important;
   }
   .swiper-button-prev {
     position: absolute !important;
-    top: 90% !important;
-    left: 40% !important;
+    top: 93% !important;
+    left: 30% !important;
+    z-index: 333 !important;
   }
-
   .swiper-button-next {
     position: absolute !important;
-    top: 90% !important;
-    right: 20% !important;
+    top: 93% !important;
+    right: 32% !important;
     z-index: 333;
   }
 }

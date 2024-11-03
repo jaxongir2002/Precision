@@ -226,7 +226,6 @@ path:hover{
   opacity: 1;
   stroke: #F5733D;
   fill-opacity:1;
-  cursor: pointer;
 }
 #US-AK:hover,
 #US-AL:hover,
@@ -279,7 +278,6 @@ path:hover{
 #US-WI:hover,
 #US-WV:hover,
 #US-WY:hover {
-  cursor: pointer;
   transition: 0.5s;
   fill: #F5733D;
   -webkit-transition: 0.5s;

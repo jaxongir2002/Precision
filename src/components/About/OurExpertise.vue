@@ -9,10 +9,10 @@ const scrollRegister = ref(null);
 const title = ref(null);
 
 function wordFade() {
-  let mySplitText = new SplitText(".text-animation_our", {type: "chars"});
-  let chars = mySplitText.chars;
+  // let mySplitText = new SplitText(".text-animation_our", {type: "chars"});
+  // let chars = mySplitText.chars;
 
-  gsap.from(chars, {
+  gsap.from('.chars2', {
     yPercent: 130,
     stagger: 0.02,
     opacity: 0
@@ -35,7 +35,7 @@ onMounted(() => {
       </div>
       <div class="col-span-5 mt-[100px] max-lg:col-span-10 max-lg:mt-[25px]">
         <div ref="title"
-             class="text-[50px] max-lg:text-[24px] leading-[130%] tracking-[3px] text-[#300A0A] text-animation_our font-medium">
+             class="text-[50px] chars2 max-lg:text-[24px] leading-[130%] tracking-[3px] text-[#300A0A] text-animation_our font-medium">
           Precision <span class="text-[#F5733D]">Health Care</span> Group is dedicated to providing personalized and
           dignified care.
         </div>

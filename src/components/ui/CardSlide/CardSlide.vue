@@ -21,7 +21,7 @@ const props = defineProps({
             </div>
           </div>
         </div>
-        <button class="btn_prince flex max-lg:hidden" :style="{color: props.info.color,border:`1px solid ${props.info.borderColor}`}">
+        <button class="btn_prince flex p-2 max-lg:hidden" :style="{color: props.info.color,border:`1px solid ${props.info.borderColor}`}">
           {{ props.info.buttonText }}
         </button>
         <div class="text-core-value mt-[30px]" :style="{color: props.info.color}">
@@ -39,11 +39,13 @@ const props = defineProps({
           <img class="animation-logo" src="@/assets/img/LogoElement.svg" alt="">
         </div>
         <img src="@/assets/img/CardSecond.svg" alt="">
+        <img class="absolute left-[520px] max-2xl:left-[460px] w-full bottom-[-80px] max-lg:hidden" src="@/assets/img/pattern2.svg" alt="">
       </div>
       <div class="relative" v-else-if="props.info.id ===3">
         <img src="@/assets/img/IconLOGO.svg" class="absolute top-[267px] max-lg:top-[196px] max-lg:left-[28px] animation-logo
         left-[37.8px] max-2xl:top-[259px] max-2xl:left-[36px] w-[35px] max-lg:w-[25px]" alt="">
         <img src="@/assets/img/CardThird.svg" alt="">
+
       </div>
 
     </div>
@@ -54,7 +56,8 @@ const props = defineProps({
       <div class="number flex justify-end" :style="{color: props.info.color}">
         {{ props.info.id }}
       </div>
-      <img class="w-[227px] flex justify-end max-lg:hidden" src="@/assets/img/SlideFon.svg" alt="">
+      <img v-if="props.info.id === 1" class="w-[227px] flex justify-end max-lg:hidden" src="@/assets/img/SlideFon.svg" alt="">
+      <img v-if="props.info.id===3" src="@/assets/img/pattern3.svg" alt="">
     </div>
   </div>
 </template>

@@ -87,7 +87,15 @@ onBeforeUnmount(() => {
   <Collaboration/>
   <Footer/>
 </template>
+<style>
 
+//::-webkit-scrollbar-thumb {
+//  background: #F5733D ;
+//}
+//::-webkit-scrollbar-track {
+//  background: #F2EDE8;
+//}
+</style>
 <style scoped lang="scss">
 .hero {
   width: 100%;

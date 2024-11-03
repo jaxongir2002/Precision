@@ -97,6 +97,13 @@ onBeforeUnmount(() => {
 body{
   background: #fff !important;
 }
+
+::-webkit-scrollbar-thumb {
+  background: #F2EDE8 !important;
+}
+::-webkit-scrollbar-track {
+  background: #300A0A !important;
+}
 </style>
 <style scoped lang="scss">
 

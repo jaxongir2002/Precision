@@ -1,72 +1,41 @@
 <script setup>
-import {ref} from 'vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps({
   changeColor: {
     type: String,
     default: '#300A0A'
   }
-})
-const items = ref([
-  {
-    text: 'People-first care',
-    title: 'care'
-  },
-  {
-    text: 'Personalized',
-    title: 'care'
-  },
-  {
-    text: 'Integrity',
-    title: ''
-  },
-  {
-    text: 'Safety',
-    title: 'security'
-  },
-  {
-    text: 'Integrity',
-    title: ''
-  },
-  {
-    text: 'Safety',
-    title: 'security'
-  },
-  {
-    text: 'Safety',
-    title: 'security'
-  },
-  {
-    text: 'Integrity',
-    title: ''
-  },
-  {
-    text: 'Safety',
-    title: 'security'
-  },
-  {
-    text: 'Safety',
-    title: 'security'
-  },
-  {
-    text: 'Integrity',
-    title: ''
-  },
-  {
-    text: 'Safety',
-    title: 'security'
-  },
-])
+});
 
+const items = ref([
+  { text: 'People-first care', title: 'care' },
+  { text: 'Personalized', title: 'care' },
+  { text: 'Integrity', title: '' },
+  { text: 'Safety', title: 'security' },
+  { text: 'Integrity', title: '' },
+  { text: 'Safety', title: 'security' },
+  { text: 'Safety', title: 'security' },
+  { text: 'Integrity', title: '' },
+  { text: 'Safety', title: 'security' },
+  { text: 'Safety', title: 'security' },
+  { text: 'Integrity', title: '' },
+  { text: 'Safety', title: 'security' },
+]);
+
+const infiniteItems = computed(() => {
+  return [...items.value, ...items.value];
+});
 </script>
 
 <template>
   <div class="infinity-line-wrapper pt-[34px] overflow-hidden relative">
     <div class="flex animate-infinite">
-      <div v-for="(item,index) in items"
+      <div v-for="(item, index) in infiniteItems"
            :key="index"
-           :style="{color: props.changeColor}"
-           class="infinity-line flex gap-3"> / {{ item.text }}
+           :style="{ color: props.changeColor }"
+           class="infinity-line flex gap-3">
+        / {{ item.text }}
         <img src="@/assets/img/warperIcon.svg" alt=""/>
         {{ item.title }}
         <div class="flex justify-end relative left-[25px]">
@@ -108,10 +77,10 @@ const items = ref([
 
 @keyframes scroll {
   0% {
-    transform: translateX(10%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Adjust based on the number of items */
+    transform: translateX(-50%); /* Move half the width of the duplicated items */
   }
 }
 </style>

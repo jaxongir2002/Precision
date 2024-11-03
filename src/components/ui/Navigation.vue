@@ -106,10 +106,10 @@ watch(openMenu, (newValue) => {
       <div>
         <img @click="openMenu = true" v-if="!openMenu" class="hidden max-lg:block"
             src="@/assets/img/burger.svg" alt="">
-        <img @click="closeMenu" class="animation_icon" v-if="openMenu" :src="props.close" alt="">
+        <img @click="closeMenu" class="animation_icon hidden max-lg:block" v-if="openMenu" :src="props.close" alt="">
         <button @click="router.push('/contact-us')"
-                class="max-lg:hidden menu rounded-[500px] text-[#F2EDE8] bg-[#F5733D] flex gap-3 items-center px-[23px] py-[13px]">
-          Contact us<img src="@/assets/img/Arrow_Left.svg" alt="arrow left icon ">
+                class="max-lg:hidden menu contact-us-btn rounded-[500px] text-[#F2EDE8] bg-[#F5733D] flex gap-3 items-center px-[23px] py-[13px]">
+          Contact us<img src="@/assets/img/Arrow_Left.svg" alt="arrow left icon" class="icon-contact-us">
         </button>
       </div>
     </nav>
@@ -122,7 +122,26 @@ watch(openMenu, (newValue) => {
 </template>
 
 <style scoped lang="scss">
-
+.contact-us-btn:hover .icon-contact-us {
+  animation: arrow-right 0.8s ease-in-out infinite;
+}
+.contact-us-btn{
+  transition:0.3s all;
+}
+.contact-us-btn:hover{
+  transform: scale(1.02);
+}
+@keyframes arrow-right {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .sticky-header {
   transition: all .5s ease;
   left: 0;

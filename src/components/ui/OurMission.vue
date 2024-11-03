@@ -8,20 +8,18 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const triggerItem = ref(null)
 
 function wordFade() {
-  let mySplitText = new SplitText(".text-animate-mission", {type: "chars"});
-  let chars = mySplitText.chars;
   let ballTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: triggerItem.value,
     },
   });
   ballTimeline.add("start")
-      .from(chars, {
-        duration: 0.3,
+      .from('.chars', {
+        duration:1,
         yPercent: 130,
         stagger: 0.01,
         opacity: 0,
-        ease: 'power1',
+        ease: 'circ.in',
       });
 }
 function isMobile() {
@@ -70,9 +68,9 @@ onMounted(() => {
       </div>
       <div class="text-[50px] max-lg:mt-[32px] max-lg:text-[30px]
            max-lg:w-full max-lg:leading-[130%] max-lg:col-span-12 text-[#fff]
-           font-medium leading-[52px] col-span-6 w-[90%] mt-[100px]">
-        <span class="text-[#F5733D] text-animate-mission"> Precision Health Care Services</span>
-        <span class="text-animate-mission"> is dedicated to providing personalized and dignified care.</span>
+           font-medium leading-[52px] col-span-6 w-[90%] mt-[100px] ">
+        <span class="text-[#F5733D] text-animate-mission chars"> Precision Health Care Services</span>
+        <span class="text-animate-mission chars"> is dedicated to providing personalized and dignified care.</span>
         <div class="mt-[33px] text-mission text-[35px] max-lg:leading-[200%] max-lg:text-[16px] leading-[130%]">
           Our commitment to <span class=" marker_first"> <span class="relative z-10">integrity safety,</span></span> and
           forward-thinking solutions ensures

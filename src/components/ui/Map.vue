@@ -11,9 +11,11 @@ import USEmap from "@/components/ui/USEmap.vue";
     </div>
     <USEmap/>
     <div class="flex justify-between pb-[40px]">
-      <div class="text-map text-[#300A0A] w-[30%]">
+      <div class="text-map text-[#300A0A] w-[100%]">
         Mapping the
-        <span class="text-[#F5733D]">Future</span> of Healthcare.
+       <div>
+         <span class="text-[#F5733D]">Future</span> of Healthcare.
+       </div>
       </div>
       <div class="flex items-end">
         <img src="@/assets/img/LOGOCOlor.svg" class="" alt="precision logo">

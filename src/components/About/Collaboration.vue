@@ -1,5 +1,7 @@
 <script setup>
-import {ref} from "vue";
+import {ref, onMounted} from "vue";
+import {gsap} from "gsap";
+const iconPosition = ref(0);
 
 const info = ref([
   {
@@ -18,16 +20,40 @@ const info = ref([
         "and provide comfort, ensuring a respectful and compassionate experience for every individual.",
   },
 ])
+const icon = ref(null);
+
+const initScrollAnimations = () => {
+  gsap.fromTo(icon.value,
+      {y: 7},
+      {
+        y: 775,
+        scrollTrigger: {
+          trigger: '.about_line',
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+          scrub: true,
+        }
+      }
+  );
+};
+
+onMounted(() => {
+  initScrollAnimations();
+});
 </script>
 
 <template>
-  <div class="w-[100%] pl-[120px] max-lg:pl-[40px]  max-lg:flex-col  max-lg:mt-[52px]  flex justify-between mt-[200px] m-auto">
-    <div class=" max-lg:hidden">
-      <img class="logo" src="@/assets/img/About/LineAbout.svg" alt="">
+  <div
+      class="w-[100%] about_line pl-[120px] max-lg:pl-[40px] max-lg:flex-col max-lg:mt-[52px] flex justify-between mt-[200px] m-auto">
+    <div class="max-lg:hidden relative">
+      <img ref="icon"
+           src="@/assets/img/About/animationLine.svg" class="relative right-[11px]" alt="">
+      <img class="logo" src="@/assets/img/About/Line.svg" alt="">
     </div>
     <div class="flex flex-col gap-[160px] max-lg:gap-[48px]">
       <div v-for="(items,index) in info" :key="index" class="title text-[25px] flex gap-3 max-lg:flex-col">
-        <div class="rounded-full max-lg:w-[45px] max-lg:h-[45px] w-[52px] h-[52px] bg-[#F5733D] flex justify-center items-center">
+        <div
+            class="rounded-full max-lg:w-[45px] max-lg:h-[45px] w-[52px] h-[52px] bg-[#F5733D] flex justify-center items-center">
           <img class="animation-logo" src="@/assets/img/About/logoRounded.svg" alt="">
         </div>
         <div class="mt-2 tracking-[0.3px]">

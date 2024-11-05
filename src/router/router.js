@@ -3,10 +3,12 @@ import Landing from "@/views/Landing.vue";
 import About from "@/views/About.vue";
 import ContactUs from "@/views/Contact.vue";
 import NotFound from "@/components/ui/NotFound.vue";
+import Legal from "@/views/Legal.vue";
 
 const routes = [
     {path: '/', component: Landing,},
     {path: '/about', component: About,},
+    {path: '/legal', component: Legal,},
     {path: '/contact-us', component: ContactUs,},
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound},
 ]

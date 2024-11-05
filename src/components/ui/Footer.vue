@@ -1,8 +1,8 @@
 <script setup>
 import LineWrapper from "@/components/ui/LineWrapper.vue";
-import { ref, onMounted } from "vue";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { gsap } from "gsap";
+import {ref, onMounted} from "vue";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {gsap} from "gsap";
 import {useRouter} from "vue-router";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,12 +25,14 @@ function wordFade() {
     ease: 'power2.out',
   });
 }
+
 function topScroll() {
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
 }
+
 onMounted(() => {
   wordFade();
 });
@@ -52,13 +54,13 @@ onMounted(() => {
             <div class="footer-menu-text">
               Menu
             </div>
-            <div @click="router.push('/')"  class="footer-menu-text">
+            <div @click="router.push('/')" class="footer-menu-text">
               Home
             </div>
-            <div @click="router.push('/about')"  class="footer-menu-text">
+            <div @click="router.push('/about')" class="footer-menu-text">
               About
             </div>
-            <div @click="router.push('/contact-us')"  class="footer-menu-text">
+            <div @click="router.push('/contact-us')" class="footer-menu-text">
               Contact Us
             </div>
           </div>
@@ -91,10 +93,10 @@ onMounted(() => {
             <div class="footer-menu-text">
               Legal
             </div>
-            <div class="footer-menu-text">
+            <div @click="router.push('/legal')" class="footer-menu-text">
               Privacy Policy
             </div>
-            <div class="footer-menu-text">
+            <div @click="router.push('/legal')" class="footer-menu-text">
               Terms and Conditions
             </div>
           </div>

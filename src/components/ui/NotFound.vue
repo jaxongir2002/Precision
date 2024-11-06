@@ -43,7 +43,6 @@ onMounted(() => {
       </div>
     </div>
   </section>
-  <Footer/>
 </template>
 <style>
 body{
@@ -87,7 +86,7 @@ body{
   align-items: center;
   align-content: center;
   position: relative;
-  height: 90vh;
+  height: 100vh;
 }
 
 .rotate-number {

@@ -65,7 +65,7 @@ onMounted(() => {
     </div>
     <div>
       <div class="flex _container  justify-between items-center">
-        <div class="footer-text w-[20%] max-lg:w-full text-[#fff] max-lg:relative top-[80px]">
+        <div class="footer-text w-[20%] max-lg:w-full text-[#fff] mb-[20px] max-lg:relative top-[80px]">
           Precision-Focused
           <span class="text-[#F6733C]">Healthcare</span> Future
         </div>

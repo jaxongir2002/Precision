@@ -21,7 +21,7 @@ function wordFade() {
   });
 
   ballTimeline.from(triggerFooter.value, {
-    y: 220,
+    y: 200,
     ease: 'power2.out',
   });
 }

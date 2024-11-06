@@ -158,7 +158,6 @@ import Footer from "@/components/ui/Footer.vue";
     </div>
   </div>
   <Footer/>
-
 </template>
 
 <style scoped lang="scss">

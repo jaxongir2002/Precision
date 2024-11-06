@@ -3,7 +3,6 @@ import ContactUs from "@/components/ContactUs/ContactUs.vue";
 import ContactLogo from "@/components/ContactUs/ContactLogo.vue";
 import Form from "@/components/ui/Form.vue";
 import Footer from "@/components/ui/Footer.vue";
-
 </script>
 
 <template>

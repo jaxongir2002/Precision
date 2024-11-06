@@ -57,7 +57,8 @@ const infoMenuContact = {
   color: '#300A0A',
   img: new URL('@/assets/img/About/animationAbout.svg', import.meta.url),
 };
-
+const imgBurger = new URL('@/assets/img/burger.svg', import.meta.url);
+const imgContact = new URL('@/assets/img/About/mobileBurgerContact.svg', import.meta.url);
 const logo = computed(() => {
   return route.path === '/' ? logoHome : route.path === '/contact-us' ? logoAbout : logoAbout;
 });
@@ -71,8 +72,17 @@ const infoMenu = computed(() => {
     return infoMenuContact;
   } else if (route.path === '/') {
     return infoMenuHome; // Default for home or other routes
-  } else{
+  } else {
     return infoMenuAbout;
+  }
+});
+const mobileBurger = computed(() => {
+  if (route.path === '/contact-us') {
+    return imgContact;
+  } else if (route.path === '/about') {
+    return imgContact;
+  } else if (route.path === '/') {
+    return imgBurger;
   }
 });
 
@@ -89,6 +99,7 @@ const infoMenu = computed(() => {
     />
   </div>
   <Navigation
+      :mobile-burger="mobileBurger"
       v-if="!showLoader"
       :info-menu="infoMenu"
       :close="closeIcon.toString()"
@@ -96,9 +107,7 @@ const infoMenu = computed(() => {
       :background-color="infoMenu.backgroundColor"
       :color="infoMenu.color"
   />
-
-    <router-view v-if="!showLoader"/>
-
+  <router-view v-if="!showLoader"/>
 </template>
 
 <style scoped lang="scss">

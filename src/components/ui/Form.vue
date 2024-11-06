@@ -52,7 +52,7 @@ onMounted(() => {
     <div class="grid grid-cols-12 mt-[70px] max-lg:mt-[25px]">
       <div class="col-span-6 max-lg:col-span-12 w-[40%] max-lg:w-[80%]">
         <div class="flex flex-col justify-between gap-[70px] max-lg:gap-[30px]">
-          <div class="header-text text-[40px] max-lg:w-[90%] max-lg:text-[30px] text-[#300A0A] text-health-animate">
+          <div class="header-text text-[40px] max-lg:w-[85%] max-lg:text-[30px] text-[#300A0A] text-health-animate">
             Empowering <span class="text-[#F5733D]">Health</span>.
             Elevating <span class="text-[#F5733D]">Care</span>.
           </div>

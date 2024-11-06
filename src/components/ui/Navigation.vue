@@ -13,7 +13,8 @@ const props = defineProps({
   backgroundColor: String,
   close: String,
   infoMenu: Object,
-  burgerRoute:String
+  burgerRoute:String,
+  mobileBurger:String
 });
 const router = useRouter()
 const lenisStore = useLenisStore();
@@ -105,7 +106,7 @@ watch(openMenu, (newValue) => {
       </div>
       <div>
         <img @click="openMenu = true" v-if="!openMenu" class="hidden max-lg:block"
-            src="@/assets/img/burger.svg" alt="">
+            :src="props.mobileBurger" alt="">
         <img @click="closeMenu" class="animation_icon hidden max-lg:block" v-if="openMenu" :src="props.close" alt="">
         <button @click="router.push('/contact-us')"
                 class="max-lg:hidden menu contact-us-btn rounded-[500px] text-[#F2EDE8] bg-[#F5733D] flex gap-3 items-center px-[23px] py-[13px]">
